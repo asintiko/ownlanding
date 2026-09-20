@@ -1,0 +1,71 @@
+{
+  "profile": {
+    "name": "Asintiko",
+    "bio": "Developer, CyberSecurity specialist",
+    "footerNote": "© 2026 wanking team ",
+    "avatarSrc": "/assets/profile/avatarSrc-11688d793c64629d.jpg",
+    "backgroundSrc": "/assets/profile/backgroundSrc-76896c28cce77ab1.jpg"
+  },
+  "theme": {
+    "sandHigh": "#F3EEE4",
+    "sandMid": "#E6DDCD",
+    "sandLow": "#DDD2BC",
+    "onPhoto": "#FFFFFF",
+    "onPhotoSoft": "#FFFFFFEB",
+    "onPhotoMuted": "#FFFFFFB8",
+    "buttonSurface": "#FFFFFFD6",
+    "ink": "#2C2A26",
+    "terracotta": "#a400f0",
+    "scrimTop": "#28231C8C",
+    "scrimBottom": "#221D16AD",
+    "fontDisplay": "font-display-georgia",
+    "fontBody": "font-body-verdana"
+  },
+  "links": [
+    {
+      "id": "6ab04ec20270b0657ae28710",
+      "kind": "content",
+      "label": "Telegram DM",
+      "url": "https://t.me/asintiko",
+      "icon": "users",
+      "platform": "telegram",
+      "sortOrder": 0
+    },
+    {
+      "id": "6ab04ec20270b0657ae28711",
+      "kind": "content",
+      "label": "Telegram Chanel ",
+      "url": "https://t.me/asintdev",
+      "icon": "graduation",
+      "platform": "telegram",
+      "sortOrder": 1
+    },
+    {
+      "id": "6ab04ec20270b0657ae28712",
+      "kind": "content",
+      "label": "Github",
+      "url": "https://github.com/asintiko",
+      "icon": "link",
+      "platform": "github",
+      "sortOrder": 2
+    },
+    {
+      "id": "6ab04ec20270b0657ae28714",
+      "kind": "social",
+      "label": "",
+      "url": "https://t.me/asintiko",
+      "icon": "telegram",
+      "platform": "telegram",
+      "sortOrder": 0
+    },
+    {
+      "id": "6ab04ec20270b0657ae28717",
+      "kind": "social",
+      "label": "",
+      "url": "https://github.com/asintiko",
+      "icon": "github",
+      "platform": "github",
+      "sortOrder": 1
+    }
+  ]
+}
