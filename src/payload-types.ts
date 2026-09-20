@@ -155,6 +155,8 @@ export interface User {
 export interface Media {
   id: number;
   alt: string;
+  prefix?: string | null;
+  _objectKey?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -281,6 +283,8 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  prefix?: T;
+  _objectKey?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -375,7 +379,7 @@ export interface Site {
     backgroundSrc?: string | null;
   };
   /**
-   * Добавляйте ссылки и перетаскивайте их, чтобы изменить порядок.
+   * Нажмите на название, чтобы изменить кнопку. Добавляйте ссылки и перетаскивайте их, чтобы изменить порядок.
    */
   contentLinks?:
     | {
@@ -389,7 +393,7 @@ export interface Site {
       }[]
     | null;
   /**
-   * Добавляйте ссылки и перетаскивайте их, чтобы изменить порядок.
+   * Нажмите на название, чтобы изменить кнопку. Добавляйте ссылки и перетаскивайте их, чтобы изменить порядок.
    */
   socialLinks?:
     | {
@@ -419,17 +423,10 @@ export interface Site {
       }[]
     | null;
   theme: {
-    sandHigh: string;
-    sandMid: string;
-    sandLow: string;
     onPhoto: string;
-    onPhotoSoft: string;
-    onPhotoMuted: string;
     buttonSurface: string;
     ink: string;
     terracotta: string;
-    scrimTop: string;
-    scrimBottom: string;
     fontDisplay?:
       | (
           | 'font-display-georgia'
@@ -450,6 +447,13 @@ export interface Site {
           | 'font-body-georgia'
         )
       | null;
+    sandHigh: string;
+    sandMid: string;
+    sandLow: string;
+    onPhotoSoft: string;
+    onPhotoMuted: string;
+    scrimTop: string;
+    scrimBottom: string;
   };
   _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
@@ -490,19 +494,19 @@ export interface SiteSelect<T extends boolean = true> {
   theme?:
     | T
     | {
-        sandHigh?: T;
-        sandMid?: T;
-        sandLow?: T;
         onPhoto?: T;
-        onPhotoSoft?: T;
-        onPhotoMuted?: T;
         buttonSurface?: T;
         ink?: T;
         terracotta?: T;
-        scrimTop?: T;
-        scrimBottom?: T;
         fontDisplay?: T;
         fontBody?: T;
+        sandHigh?: T;
+        sandMid?: T;
+        sandLow?: T;
+        onPhotoSoft?: T;
+        onPhotoMuted?: T;
+        scrimTop?: T;
+        scrimBottom?: T;
       };
   _status?: T;
   updatedAt?: T;

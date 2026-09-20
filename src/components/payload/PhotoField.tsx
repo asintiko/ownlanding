@@ -1,12 +1,13 @@
 'use client';
 
-import { useDocumentInfo, useField, useForm, useFormFields, useListDrawer } from '@payloadcms/ui';
+import { useDocumentInfo, useField, useForm, useFormFields, useListDrawer, useUploadHandlers } from '@payloadcms/ui';
 import { Images, Upload } from 'lucide-react';
 import Image from 'next/image';
 import type { UploadFieldClientProps } from 'payload';
 import { useEffect, useId, useRef, useState } from 'react';
 import type { Media } from '../../payload-types';
 import { safeURL } from '../../lib/payload-content.js';
+import { photoUploadBody } from '../../lib/photo-upload';
 
 const IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/avif'];
 const MAX_BYTES = 10 * 1024 * 1024;
@@ -17,6 +18,7 @@ export function PhotoField(props: UploadFieldClientProps) {
     potentiallyStalePath: props.path,
   });
   const fallback = useFormFields(([fields]) => fields[`${path}Src`]?.value);
+  const { getUploadHandler } = useUploadHandlers();
   const { setProcessing } = useForm();
   const { setUploadStatus } = useDocumentInfo();
   const [ListDrawer, , { openDrawer, closeDrawer }] = useListDrawer({
@@ -69,9 +71,7 @@ export function PhotoField(props: UploadFieldClientProps) {
     uploadController.current = controller;
     const timeout = window.setTimeout(() => controller.abort(), 60000);
     try {
-      const body = new FormData();
-      body.set('_payload', JSON.stringify({ alt: `${label}: ${file.name}`.slice(0, 250) }));
-      body.set('file', file);
+      const body = await photoUploadBody(file, `${label}: ${file.name}`, getUploadHandler({ collectionSlug: 'media' }), controller.signal);
       const response = await fetch('/api/media', { method: 'POST', body, signal: controller.signal });
       if (response.status === 401 || response.status === 403) throw new PhotoUploadError('Войдите в админку снова, чтобы загрузить фотографию.');
       const result = await response.json();

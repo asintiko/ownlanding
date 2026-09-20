@@ -3,6 +3,7 @@ import { IconField as IconField_88ad2ef4a2d3c48efe74e5696abbe1f2 } from '../../.
 import { LinkRowLabel as LinkRowLabel_30042849f8a9eebc91f84d5de2a8879e } from '../../../components/payload/LinkRowLabel'
 import { ColorField as ColorField_386fb4f018787bb5f9192147d4ea9772 } from '../../../components/payload/ColorField'
 import { SitePreview as SitePreview_e38feeaa82a2b227bfcd1153e674201b } from '../../../components/payload/SitePreview'
+import { VercelBlobClientUploadHandler as VercelBlobClientUploadHandler_16c82c5e25f430251a3e3ba57219ff4e } from '@payloadcms/storage-vercel-blob/client'
 import { Dashboard as Dashboard_bfe3dda99be101306e18d134ca8bfe68 } from '../../../components/payload/Dashboard'
 import { CollectionCards as CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1 } from '@payloadcms/next/rsc'
 
@@ -13,6 +14,7 @@ export const importMap = {
   "/components/payload/LinkRowLabel#LinkRowLabel": LinkRowLabel_30042849f8a9eebc91f84d5de2a8879e,
   "/components/payload/ColorField#ColorField": ColorField_386fb4f018787bb5f9192147d4ea9772,
   "/components/payload/SitePreview#SitePreview": SitePreview_e38feeaa82a2b227bfcd1153e674201b,
+  "@payloadcms/storage-vercel-blob/client#VercelBlobClientUploadHandler": VercelBlobClientUploadHandler_16c82c5e25f430251a3e3ba57219ff4e,
   "/components/payload/Dashboard#Dashboard": Dashboard_bfe3dda99be101306e18d134ca8bfe68,
   "@payloadcms/next/rsc#CollectionCards": CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1
 }
