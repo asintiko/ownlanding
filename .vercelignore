@@ -1,0 +1,13 @@
+/.git/
+/node_modules/
+/.next*/
+.env*
+/.vercel/
+/data/
+/media/
+/studio/data/
+/artifacts/
+/dist/
+/.accio*
+*.tsbuildinfo
+*.log
