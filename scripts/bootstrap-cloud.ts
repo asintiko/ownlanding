@@ -16,7 +16,9 @@ if (!email || !password || password.length < 12 || !name) {
   throw new Error('Set BOOTSTRAP_ADMIN_EMAIL, BOOTSTRAP_ADMIN_NAME and BOOTSTRAP_ADMIN_PASSWORD (at least 12 characters) privately');
 }
 
+process.env.DISABLE_PAYLOAD_HMR = 'true';
 const payload = await getPayload({ config });
+const databaseClient = payload.db.drizzle.$client;
 try {
   await payload.db.migrate();
   const users = await payload.find({ collection: 'users', limit: 1, overrideAccess: true });
@@ -38,5 +40,9 @@ try {
     payload.logger.info('Site already exists; content was not changed.');
   }
 } finally {
-  await payload.destroy();
+  try {
+    await payload.destroy();
+  } finally {
+    databaseClient.close();
+  }
 }
